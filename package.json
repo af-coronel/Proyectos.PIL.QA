@@ -1,0 +1,21 @@
+{
+  "name": "pilqa.cypress",
+  "version": "1.0.0",
+  "description": "Test automatizados para el curso de PILQA",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Tests",
+    "Cypress",
+    "automation",
+    "PIL",
+    "QA"
+  ],
+  "author": "Darwoft",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.17.3"
+  }
+}

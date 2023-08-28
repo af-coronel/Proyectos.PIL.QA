@@ -10,10 +10,15 @@ import EdenEvent from "../../PageObjectModel/edenEvent";
 const edenEvent = new EdenEvent();
 
 import edenSalas from "../../PageObjectModel/edenSalas";
+import utils from "../../PageObjectModel/utils";
+const Utils = require("../../PageObjectModel/utils");
 
 
 describe("Test sobre la página de EDEN ENTRADAS", () => {
     beforeEach (() => {
+        //const tamPantalla = Cypress.env("viewportdesktop").device;
+        const tamPantalla = Cypress.env("viewportmobile").device
+        cy.viewport(tamPantalla);
         cy.visit("/");
         //función para visitar página
     });
@@ -27,8 +32,16 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
 
 
     it("Verificar Menú", () => {
-
-        const menuBtn = ["HOME","TODOS","AGENDA DEL FINDE","RECITALES","TEATROS","CUARTETOS","FESTIVALES","SALAS"];
+        const menuBtn = [
+            "HOME",
+            "TODOS",
+            "AGENDA DEL FINDE",
+            "RECITALES",
+            "TEATROS",
+            "CUARTETOS",
+            "FESTIVALES",
+            "SALAS"
+        ];
         edenHeader.getMenuButtons().each((button, $index) => {
             cy.wrap(button).should("contain.text", menuBtn[$index]);
         });
@@ -61,35 +74,15 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
     });
 
 
-    it("Validación del calendario", () => {
+    it.only("Validación del calendario", () => {
 
-        const fechaActual = new Date();
-        const diaActual = fechaActual.getDate();
-        const mesActual = fechaActual.getMonth();
-        const anioActual = fechaActual.getFullYear();
+        const [dia, mes, anio] = utils.getCompleteDate();
 
-        const nombresMeses = [
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre",
-        ];
-
-        cy.log(diaActual);
-        
-        edenHeader.getCalendarTitle().should("contain.text", nombresMeses[mesActual]);
-        edenHeader.getCalendarTitle().should("contain.text", anioActual);
+        edenHeader.getCalendarTitle().should("contain.text", mes);
+        edenHeader.getCalendarTitle().should("contain.text", anio);
 
         edenHeader.getCalendar().find("td").each((cuadradoDia, $inx) => {
-            if($inx < diaActual){
+            if($inx < dia){
             cy.wrap(cuadradoDia).should(
                 "have.class",
                  "ui-datepicker-unselectable ui-state-disabled"
@@ -127,7 +120,7 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
       })
     });   
         
-    it.only("Verificar nombre de salas con FIXTURE", () => {
+    it("Verificar nombre de salas con FIXTURE", () => {
         
         edenHeader.getMenuButtons().contains("SALAS").click();
 

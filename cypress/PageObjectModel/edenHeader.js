@@ -8,6 +8,9 @@ class EdenHeaderLocators {
         //Sección de Búsqueda
         this.searchInput = "#espectaculoList";
         this.searchSuggestion = ".ui-menu-item";
+        //Calendario
+        this.calendarTitle = ".ui-datepicker-title";
+        this.calendar = ".ui-datepicker-calendar";
     }
 };
 
@@ -34,4 +37,12 @@ export default class EdenHome {
         return cy.get(this.locators.searchSuggestion);
     }
 
+    getCalendarTitle() {
+        return cy.get(this.locators.calendarTitle);
+    }
+
+    getCalendar() {
+        return cy.get(this.locators.calendar);
+    }
+    
 };

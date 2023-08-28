@@ -25,8 +25,15 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("openWeb", () => {
-    //const tamPantalla = Cypress.env("viewportdesktop").device;
-    const tamPantalla = Cypress.env("viewportmobile").device
+    
+    let tamPantalla;
+
+    if(Cypress.env("type" === "mobile")) {
+        const tamPantalla = Cypress.env("viewportmobile").device;
+    }else{
+        const tamPantalla = Cypress.env("viewportdesktop").device;
+    }
+    
     cy.viewport(tamPantalla);
     cy.visit("/");
 });

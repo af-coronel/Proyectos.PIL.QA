@@ -74,7 +74,7 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
     });
 
 
-    it.only("Validación del calendario", () => {
+    it("Validación del calendario", () => {
 
         const [dia, mes, anio] = utils.getCompleteDate();
 

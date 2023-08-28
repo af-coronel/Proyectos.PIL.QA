@@ -14,7 +14,16 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
 
     it("Verificar Menú", () => {
         cy.visit("https://www.edenentradas.com.ar/");
-        const menuBtn = ["HOME","TODOS","AGENDA DEL FINDE","RECITALES","TEATROS","CUARTETOS","FESTIVALES","SALAS"];
+        const menuBtn = [
+            "HOME",
+            "TODOS",
+            "AGENDA DEL FINDE",
+            "RECITALES",
+            "TEATROS",
+            "CUARTETOS",
+            "FESTIVALES",
+            "SALAS"
+        ];
 
         menuBtn.forEach((txtBtn, $index) => {
             edenHeader2.getMenuButtons().eq($index).should("contain.text", txtBtn);

@@ -29,9 +29,9 @@ Cypress.Commands.add("openWeb", () => {
     let tamPantalla;
 
     if(Cypress.env("type" === "mobile")) {
-        const tamPantalla = Cypress.env("viewportmobile").device;
+        tamPantalla = Cypress.env("viewportmobile").device;
     }else{
-        const tamPantalla = Cypress.env("viewportdesktop").device;
+        tamPantalla = Cypress.env("viewportdesktop").device;
     }
     
     cy.viewport(tamPantalla);

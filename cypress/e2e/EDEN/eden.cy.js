@@ -23,7 +23,7 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
         //función para visitar página
     });
 
-    it("Verificar Subtitulos", () => {
+    it("Verificar Subtitulos", { tags: '@regression' }, () => {
         const txtBuscar = "BUSCAR EVENTO";
         const txtCalendar = "CALENDARIO DE EVENTOS";
         edenHome.getSubTitles().first().should("contain.text", txtBuscar);

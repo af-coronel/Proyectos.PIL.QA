@@ -10,6 +10,7 @@
     "cypress:open:firefox:desktop": "npx cypress open --e2e --browser firefox -e type=desktop,grepTags=@regression",
     "cypress:open:firefox:mobile": "npx cypress open --e2e --browser firefox -e type=mobile",
     "cypres:run:eden": "npx cypress run --e2e --browser chrome --spec cypress/e2e/EDEN",
+    "cypres:run:eden1": "npm run delete:reports &&  npx cypress run --e2e --browser chrome --spec cypress/e2e/EDEN/eden.cy.js",
     "cypres:run:eden:firefox": "npx cypress run --e2e --browser firefox --spec cypress/e2e/EDEN"
   },
   "keywords": [

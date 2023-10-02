@@ -77,10 +77,8 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
     it("Validación del calendario", () => {
 
         const [dia, mes, anio] = utils.getCompleteDate();
-
         edenHeader.getCalendarTitle().should("contain.text", mes);
         edenHeader.getCalendarTitle().should("contain.text", anio);
-
         edenHeader.getCalendar().find("td").each((cuadradoDia, $inx) => {
             if($inx < dia){
             cy.wrap(cuadradoDia).should(
@@ -109,13 +107,13 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
             ];
             
        //Validación de los títulos iterando por elemento
-       edenSalas.getSalaBlock().each((block) => { 
+        edenSalas.getSalaBlock().each((block) => { 
         cy.wrap(block).should("be.visible");
         cy.wrap(block).should("contain.text", titulosSalas[$inx]);
       })
 
       //Validación de los títulos por array
-    titulosSalas.forEach((titulo, $inx) => {
+        titulosSalas.forEach((titulo, $inx) => {
         edenSalas.getSalaBlock().eq($inx).should("contain.text", titulo);
       })
     });   
@@ -125,10 +123,10 @@ describe("Test sobre la página de EDEN ENTRADAS", () => {
         edenHeader.getMenuButtons().contains("SALAS").click();
 
        cy.fixture("salas.json").then((file) => {
-          //Validación de los títulos por array
-          file.forEach((sala, $inx) => {
-            edenSalas.getSalaBlock().eq($inx).should("contain.text", sala.title);
-            edenSalas.getSalaBlock().eq($inx).should("contain.text", sala.address);
+        //Validación de los títulos por array
+        file.forEach((sala, $inx) => {
+        edenSalas.getSalaBlock().eq($inx).should("contain.text", sala.title);
+        edenSalas.getSalaBlock().eq($inx).should("contain.text", sala.address);
            });
         });
     });

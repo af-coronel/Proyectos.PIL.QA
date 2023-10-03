@@ -1,4 +1,6 @@
 node_modules
 cypress/screenshots
 cypress/videos
-cypress/fixture/autogenerado
+cypress/fixtures/autogenerado
+autogenerado
+

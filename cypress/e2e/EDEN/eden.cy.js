@@ -14,18 +14,17 @@ import utils from "../../PageObjectModel/utils";
 const Utils = require("../../PageObjectModel/utils");
 
 
-describe("Test sobre la página de EDEN ENTRADAS", () => {
+describe("Test sobre la página de EDEN ENTRADAS",
+  { tags: '@regression' },
+  () => {
     beforeEach (() => {
-        //const tamPantalla = Cypress.env("viewportdesktop").device;
-        const tamPantalla = Cypress.env("viewportmobile").device
-        cy.viewport(tamPantalla);
-        cy.visit("/");
-        //función para visitar página
+      cy.openWeb();
     });
 
-    it("Verificar Subtitulos", { tags: '@regression' }, () => {
+    it("Verificar Subtitulos", { tags: '@plp' }, () => {
         const txtBuscar = "BUSCAR EVENTO";
         const txtCalendar = "CALENDARIO DE EVENTOS";
+
         edenHome.getSubTitles().first().should("contain.text", txtBuscar);
         edenHome.getSubTitles().last().should("contain.text", txtCalendar);
     });

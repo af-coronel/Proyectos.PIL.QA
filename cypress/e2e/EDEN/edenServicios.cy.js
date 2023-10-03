@@ -4,7 +4,7 @@ describe("TEST DE SERVICIO DE EDEN", () => {
   it("Verificar Servicio de INICIO 1", () => {
     cy.request(
       "GET",
-      "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio"
+      "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos"
     ).then((respuesta) => {
       cy.log(`Respuesta del servicio de Inicio: ${JSON.stringify(respuesta)}`);
       expect(respuesta.status).to.eq(200);
@@ -14,7 +14,8 @@ describe("TEST DE SERVICIO DE EDEN", () => {
   it("Verificar Servicio de INICIO 2", () => {
     cy.request({
       method: "GET",
-      url: "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio",
+      //url: "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio",
+      url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos",
     }).then((respuesta) => {
       cy.log(`Respuesta del servicio de Inicio: ${JSON.stringify(respuesta)}`);
       expect(respuesta.status).to.eq(200);
@@ -28,7 +29,8 @@ describe("TEST DE SERVICIO DE EDEN", () => {
   it("Verificar Servicio de INICIO 3 - Validar tipo de datos", () => {
     cy.request({
       method: "GET",
-      url: "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio",
+      //url: "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio",
+      url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos",
     }).then((respuesta) => {
       cy.log(`Respuesta del servicio de Inicio: ${JSON.stringify(respuesta)}`);
       expect(respuesta.status).to.eq(200);
@@ -44,6 +46,7 @@ describe("TEST DE SERVICIO DE EDEN", () => {
     cy.request({
       method: "GET",
       url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos",
+      //url: "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos",
     }).then((respuesta) => {
       cy.log(
         `Respuesta del servicio de Cuartetos: ${JSON.stringify(respuesta)}`
@@ -60,7 +63,7 @@ describe("TEST DE SERVICIO DE EDEN", () => {
   it("Verificar Servicio de INICIO 3BIS - Validar tipo de datos", () => {
     cy.callServiceCheck(
       "GET",
-      "https://edenapi.edenentradas.com.ar/edenventarestapi2/api/contenido/inicio",
+      "https://edenapi.edenentradas.com.ar/edenventarestapi/api/contenido/eventos/cuartetos",
       "eventos_schema",
       "eventos"
     );

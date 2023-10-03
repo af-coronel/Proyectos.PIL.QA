@@ -24,10 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import { data } from "cypress/types/jquery";
-
-const Ajv = requiere("ajv")
-const ajv = new Ajv()
+const Ajv = require("ajv");
+const ajv = new Ajv();
 
 Cypress.Commands.add("openWeb", () => {
     let tamPantalla;
@@ -47,7 +45,7 @@ Cypress.Commands.add("validarSchema", (schemaName, servicioName) => {
         //Qué se hace con el schema?
       cy.fixture(`autogenerado/${servicioName}.json`).then((dataServicio) => {
         const validate = ajv.compile(schema)
-        const valid = validate(data)
+        const valid = validate(dataServicio)
         if (!valid) console.log(validate.errors)
       });
     });

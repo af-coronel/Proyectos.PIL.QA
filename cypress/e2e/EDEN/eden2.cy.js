@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-const edenHome2 = require("../../PageObjectMode/edenHome2");
-const edenHeader2 = require("../../PageObjectMode/edenHeader2");
+const edenHome2 = require("../../PageObjectModel/eden/edenHome2");
+const edenHeader2 = require("../../PageObjectModel/eden/edenHeader2");
 
 
 describe("Test sobre la página de EDEN ENTRADAS", () => {

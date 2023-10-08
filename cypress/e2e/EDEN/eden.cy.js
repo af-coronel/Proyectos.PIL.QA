@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
-import EdenHome from "../../PageObjectModel/edenHome";
+import EdenHome from "../../PageObjectModel/eden/edenHome";
 const edenHome = new EdenHome();
 
-import EdenHeader from "../../PageObjectModel/edenHeader";
+import EdenHeader from "../../PageObjectModel/eden/edenHeader";
 const edenHeader = new EdenHeader();
 
 
-import EdenEvent from "../../PageObjectModel/edenEvent";
+import EdenEvent from "../../PageObjectModel/eden/edenEvent";
 const edenEvent = new EdenEvent();
 
-import edenSalas from "../../PageObjectModel/edenSalas";
+import edenSalas from "../../PageObjectModel/eden/edenSalas";
 import utils from "../../PageObjectModel/utils";
 const Utils = require("../../PageObjectModel/utils");
 

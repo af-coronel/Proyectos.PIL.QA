@@ -69,14 +69,15 @@ Cypress.Commands.add(
     }
   );
 
-  
+
 /**
  * Llama a un servicio y verifica la estructura de datos
  * @method callServiceCheck
  * @param {String} meth - Método: GET/POST/PUT, etc
  * @param {String} completeUrl - ENdpoint que se desea verificar
  * @param {String} schema - Nombre del Esquema del Servicio
- * @param {String} fileName - Nombre del archivo que se autogenerara con la respuesta del servicio
+ * @param {String} fileName - Nombre del archivo que se autogenerara 
+ * con la respuesta del servicio
  */
 Cypress.Commands.add(
     "callServiceCheck",

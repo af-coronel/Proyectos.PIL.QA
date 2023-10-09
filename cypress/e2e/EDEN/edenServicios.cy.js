@@ -60,6 +60,8 @@ describe("TEST DE SERVICIO DE EDEN", () => {
     });
   });
 
+  //En la práctica esta es la forma correcta de escribir el test: 
+  //Corto y Reutilizable, utilizando funciones guardadas en command.
   it("Verificar Servicio de INICIO 3BIS - Validar tipo de datos", () => {
     cy.callServiceCheck(
       "GET",
@@ -69,6 +71,8 @@ describe("TEST DE SERVICIO DE EDEN", () => {
     );
   });
 
+  //En la práctica esta es la forma correcta de escribir el test: 
+  //Corto y Reutilizable, utilizando funciones guardadas en command.
   it("Verificar Servicio de CUARTETOS 4BIS - Validar tipo de datos", () => {
     cy.callServiceCheck(
       "GET",
@@ -77,6 +81,7 @@ describe("TEST DE SERVICIO DE EDEN", () => {
       "cuartetos"
     );
   });
+  
 });
 
     

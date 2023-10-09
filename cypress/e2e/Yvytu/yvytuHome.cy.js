@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
 
-describe("Test sobre la pagina YVYTU", () => {
+ describe("Test sobre la pagina YVYTU", () => {
 
     beforeEach(() => {
         cy.visit("https://vientosdelaselva.com.ar/");
@@ -18,8 +18,8 @@ describe("Test sobre la pagina YVYTU", () => {
         ];
         
         YvytuHome
-        .getMenuPillButtons()
-        .each((boton, indice) => {
+          .getMenuPillButtons()
+          .each((boton, indice) => {
             cy.wrap(boton)
             .should(
                 "have.text",
@@ -41,35 +41,53 @@ describe("Test sobre la pagina YVYTU", () => {
         ];
 
         YvytuHome
-        .getMenuAllButton()
-        .each((boton, indice) => {
+          .getMenuAllButton()
+          .each((boton, indice) => {
           if (indice != 0) {
             cy.wrap(boton).should("have.text", menu[indice]);
           }
         });
       });
 
-    it.only("Verificar comportamiento del botón Ir Arriba", () => { 
+    it("Verificar comportamiento del botón Ir Arriba", () => { 
        YvytuHome
-       .getIrArribaButton()
-       .should("not.be.visible");
+         .getIrArribaButton()
+         .should("not.be.visible");
+
        YvytuHome
-       .getGenericSubtitle()
-       .contains("Conocé una historia mágica.")
-       .scrollIntoView();
+         .getGenericSubtitle()
+         .contains("Conocé una historia mágica.")
+         .scrollIntoView();
+
        YvytuHome
-       .getIrArribaButton()
-       .should("be.visible")
-       .and("have.text", "\n            Ir arriba\n          ")
-       .click();
+         .getIrArribaButton()
+         .should("be.visible")
+         .and("have.text", "\n            Ir arriba\n          ")
+         .click();
+         
        YvytuHome
-       .getMenuPillButtons()
-       .each((boton, indice) => {
+         .getMenuPillButtons()
+         .each((boton, indice) => {
             cy.wrap(boton)
             .should(
                 "be.visible"
             );
-
-        })
-    });
-});    
+         })
+      });
+    
+    it.only("Verificar Botón de Reservar", () => {
+       YvytuHome
+          .getGenericButton()
+          .contains("Reservar")
+          .should("have.attr", "href", "https://wa.me/5493757454400")
+          .and("have.attr", "target", "_blank");
+    
+    //Primer test visual: have.css
+       YvytuHome
+          .getGenericButton()
+          .contains("Reservar")
+          .should("have.css","Background",
+            "rgb(34, 153, 84) none repeat scroll 0% 0% / auto padding-box border-box"
+          );
+      });
+  });    

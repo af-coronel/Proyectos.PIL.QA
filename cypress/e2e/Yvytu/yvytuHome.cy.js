@@ -62,7 +62,8 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
        YvytuHome
          .getIrArribaButton()
          .should("be.visible")
-         .and("have.text", "\n            Ir arriba\n          ")
+         .and("have.text",
+          "\n            Ir arriba\n          ")
          .click();
          
        YvytuHome
@@ -74,8 +75,9 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
             );
          })
       });
-    
-    it.only("Verificar Botón de Reservar", () => {
+    //Para testear atributos usamos have.attr, atributo, valor. 
+    // "a" denota un enlace funcional, en html. 
+    it("Verificar Botón de Reservar", () => {
        YvytuHome
           .getGenericButton()
           .contains("Reservar")
@@ -90,4 +92,12 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
             "rgb(34, 153, 84) none repeat scroll 0% 0% / auto padding-box border-box"
           );
       });
+
+      it.only("Verificar Imagenes de las Cabañas", () => {
+        YvytuHome
+          .getImgCabaniaYaguarete()
+          .should("have.attr", "src", "./public/images/cabana-gallery/01.png")
+      });
+
+
   });    

@@ -2,9 +2,13 @@
 const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
 
 describe("Test sobre la pagina YVYTU", () => {
-    it("Verificar barra de navegación - Iterar en Botones píldora", () => {
+
+    beforeEach(() => {
         cy.visit("https://vientosdelaselva.com.ar/");
 
+      });
+
+    it("Verificar barra de navegación - Iterar en Botones píldora", () => {
         const menu = [
             "LA RESERVA", 
             "CABAÑAS", 
@@ -13,7 +17,9 @@ describe("Test sobre la pagina YVYTU", () => {
             "DONÁ"
         ];
         
-        YvytuHome.getMenuPillButtons().each((boton, indice) => {
+        YvytuHome
+        .getMenuPillButtons()
+        .each((boton, indice) => {
             cy.wrap(boton)
             .should(
                 "have.text",
@@ -22,11 +28,9 @@ describe("Test sobre la pagina YVYTU", () => {
                 "be.visible"
              )
         });
-    });
+      });
 
     it("Verificar Barra de Navegación - Iterar en Botones", () => {
-
-        cy.visit("https://vientosdelaselva.com.ar/");
         const menu = [
           "",
           "LA RESERVA",
@@ -35,11 +39,37 @@ describe("Test sobre la pagina YVYTU", () => {
           "CONTACTO",
           "DONÁ",
         ];
-    
-        YvytuHome.getMenuAllButton().each((boton, indice) => {
+
+        YvytuHome
+        .getMenuAllButton()
+        .each((boton, indice) => {
           if (indice != 0) {
             cy.wrap(boton).should("have.text", menu[indice]);
           }
         });
       });
-});
+
+    it.only("Verificar comportamiento del botón Ir Arriba", () => { 
+       YvytuHome
+       .getIrArribaButton()
+       .should("not.be.visible");
+       YvytuHome
+       .getGenericSubtitle()
+       .contains("Conocé una historia mágica.")
+       .scrollIntoView();
+       YvytuHome
+       .getIrArribaButton()
+       .should("be.visible")
+       .and("have.text", "\n            Ir arriba\n          ")
+       .click();
+       YvytuHome
+       .getMenuPillButtons()
+       .each((boton, indice) => {
+            cy.wrap(boton)
+            .should(
+                "be.visible"
+            );
+
+        })
+    });
+});    

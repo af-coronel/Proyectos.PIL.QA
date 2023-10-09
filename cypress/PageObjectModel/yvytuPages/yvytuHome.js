@@ -7,7 +7,17 @@ class YvytuHome{
     
     getMenuAllButton() {
         return cy.get("nav#menu-nav a");
-      }
+    }
+
+    //Boton ir arriba
+    getIrArribaButton() {
+    return cy.get("#btn-scroll-top");
+    }
+    
+    //Banner de imagen home
+    getGenericSubtitle() {
+        return cy.get("h2");
+    }
 };
 
 export default new YvytuHome();

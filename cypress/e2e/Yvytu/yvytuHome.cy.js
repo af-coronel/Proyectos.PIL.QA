@@ -236,7 +236,7 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
          .compareSnapshot("botones");
       });
     
-    it.only("Visual testing del boton ir arriba", () => {
+    it("Visual testing del boton ir arriba", () => {
         YvytuHome
          .getIrArribaButton()
          .should(

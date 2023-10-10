@@ -44,7 +44,19 @@ describe("Test de servicio de Tienda CLARO", () => {
         });
     });
 
-});
 
-//En la brevedad estaré subiendo más test de servicios, y pensando más page objects.
-//Gracias por la ciencia profe!
+//Ejemplo que dió la profe el 31/08:
+    it.only("Verificar Servicio contentManagement de Productos_destacados_spot", () => {
+      cy.request(
+         "GET",
+         "https://tienda.claro.com.ar/api/contentManagement?content=Productos_destacados_spot")
+        .then((respuesta) => {
+      cy.log(`Respuesta del servicio de Inicio: ${JSON.stringify(respuesta)}`);
+      cy.writeFile(
+         "cypress/fixtures/autogenerado/Productos_destacados_spot.json",
+         respuesta.body); //genera el .json del servicio
+       expect(respuesta.status).to.eq(200);
+        })
+    });
+  
+ });

@@ -1,7 +1,15 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  
+  reporter: "cypress-mochawesome-reporter",
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: "Reporte Personalizable",
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
+  video: false,
   env: {
     viewportmobile: {
       device: "iphone-xr"

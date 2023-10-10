@@ -3,5 +3,6 @@ cypress/screenshots
 cypress/videos
 cypress/fixtures/autogenerado
 autogenerado
+cypress/reports
 
 

@@ -25,6 +25,7 @@ module.exports = defineConfig({
       // implement node event listeners here
       require('@bahmutov/cy-grep/src/plugin')(on);
       require("@bahmutov/cy-grep/src/plugin")(config);
+      require("cypress-image-diff-js/dist/plugin")(on, config);
       // IMPORTANT: return the config object
       return config;
       // implement node event listeners here

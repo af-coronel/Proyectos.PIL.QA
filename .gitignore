@@ -4,5 +4,8 @@ cypress/videos
 cypress/fixtures/autogenerado
 autogenerado
 cypress/reports
+cypress/downloads
+cypress-visual-screenshots/comparison
+cypress-visual-screenshots/diff
 
 

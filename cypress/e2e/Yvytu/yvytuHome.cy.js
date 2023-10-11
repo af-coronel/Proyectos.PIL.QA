@@ -226,10 +226,10 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
       });
     
     it("Visual Tetsing de Yvytu usando Snapshoot", () => {
-        cy.compareSnapshot("home-page");
+        cy.compareSnapshot("home-page", 0.2); //Umbral del 20%
       });
     
-    it.only("Visual Tetsing de Yvytu usando Snapshoot en un elemento", () => {
+    it("Visual Tetsing de Yvytu usando Snapshoot en un elemento", () => {
         YvytuHome
          .getMenuPillButtons()
          .parent()

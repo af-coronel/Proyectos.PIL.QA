@@ -1,0 +1,42 @@
+{
+  "total": 2,
+  "totalPassed": 2,
+  "totalFailed": 0,
+  "totalSuites": 1,
+  "suites": [
+    {
+      "name": "yvytuHome.cy.js",
+      "path": "cypress\\e2e\\Yvytu\\yvytuHome.cy.js",
+      "tests": [
+        {
+          "status": "pass",
+          "name": "yvytuHome.cy-home-page",
+          "percentage": 0.18326093858002512,
+          "failureThreshold": 0.2,
+          "specPath": "cypress\\e2e\\Yvytu\\yvytuHome.cy.js",
+          "specFilename": "yvytuHome.cy.js",
+          "baselinePath": "cypress-visual-screenshots\\baseline\\yvytuHome.cy-home-page.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-visual-screenshots\\comparison\\yvytuHome.cy-home-page.png"
+        },
+        {
+          "status": "pass",
+          "name": "yvytuHome.cy-botones",
+          "percentage": 0,
+          "failureThreshold": 0,
+          "specPath": "cypress\\e2e\\Yvytu\\yvytuHome.cy.js",
+          "specFilename": "yvytuHome.cy.js",
+          "baselinePath": "cypress-visual-screenshots\\baseline\\yvytuHome.cy-botones.png",
+          "diffPath": "",
+          "comparisonPath": "cypress-visual-screenshots\\comparison\\yvytuHome.cy-botones.png"
+        }
+      ]
+    }
+  ],
+  "startedAt": "2023-10-11T15:51:07.975Z",
+  "endedAt": "2023-10-11T15:52:01.461Z",
+  "duration": 53486,
+  "browserName": "chrome",
+  "browserVersion": "117.0.5938.150",
+  "cypressVersion": "12.17.4"
+}

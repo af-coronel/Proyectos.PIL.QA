@@ -229,7 +229,7 @@ const YvytuHome = require ("../../PageObjectModel/yvytuPages/yvytuHome");
         cy.compareSnapshot("home-page");
       });
     
-    it("Visual Tetsing de Yvytu usando Snapshoot en un elemento", () => {
+    it.only("Visual Tetsing de Yvytu usando Snapshoot en un elemento", () => {
         YvytuHome
          .getMenuPillButtons()
          .parent()
